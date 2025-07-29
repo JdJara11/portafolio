@@ -1,5 +1,4 @@
 ---
-import Contact from '../components/Contact.astro';
 import Github from '../components/icons/Github.astro';
 import LinkedIn from '../components/icons/LinkedIn.astro';
 import Layout from '../layouts/Layout.astro';
@@ -10,6 +9,9 @@ import About from '../components/About.astro';
 import Coffee from '../components/icons/Coffee.astro';
 import '../styles/global.css';
 import Studies from '../components/Studies.astro';
+import Projects from '../components/Projects.astro';
+import Button from '../components/Button.astro';
+import Code from '../components/icons/Code.astro';
 
 ---
 
@@ -23,28 +25,35 @@ import Studies from '../components/Studies.astro';
 				Medellin-Colombia
 			</h2>
 			<nav class="flex gap-4 mt-8 flex-wrap">
-				<Contact href="https://www.linkedin.com/in/juan-david-jaramillo-dev/">
+				<Button href="https://www.linkedin.com/in/juan-david-jaramillo-dev/">
 					<LinkedIn  class="size-4 md:size-6"/>
 					LinkedIn
-				</Contact>
-				<Contact href="https://github.com/JdJara11">
+				</Button>
+				<Button href="https://github.com/JdJara11">
 					<Github  class="size-4 md:size-6"/>
 					Github
-				</Contact>
-				<Contact href="mailto:davidjaramillogarcia@gmail.com">
+				</Button>
+				<Button href="mailto:davidjaramillogarcia@gmail.com">
 					<Mail class="size-4 md:size-6"/>
 					Gmail
-				</Contact>
+				</Button>
 			</nav>
 		</section>
-		<section id="formacion" class="scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl py-16 md:py-36">
+		<section id="formacion" class="scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">
 			<h2 class="text-2xl font-semibold mb-4 flex gap-x-3 items-center">
 				<Book class="size-10"/>
 				Formación Academica
 			</h2>
 			<Studies/>
 		</section>
-		<section id="sobre-mi" class="scroll-m-20 w-full mx-auto container mt-10 lg:max-w-4xl md:max-w-2xl py-16 md:py-36">
+		<section id="proyectos" class="scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">
+			<h2 class="text-2xl font-semibold mb-4 flex gap-x-3 items-center">
+				<Code class="size-10"/>
+				Proyectos
+			</h2>
+			<Projects/>
+		</section>
+		<section id="sobre-mi" class="scroll-m-20 w-full mx-auto container mt-10 lg:max-w-4xl md:max-w-2xl">
 			<h2 class="text-2xl font-semibold mb-4 flex gap-x-3 items-center">
 				<Coffee class="size-10"/>
 				Sobre mi
