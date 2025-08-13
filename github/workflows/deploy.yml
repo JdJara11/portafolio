@@ -1,0 +1,36 @@
+name: Deploy Astro site to GitHub Pages
+
+on:
+  push:
+    branches: ["main"] # Rama que quieres que dispare el deploy
+
+permissions:
+  contents: write # Necesario para publicar en gh-pages
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Descargar tu código
+      - uses: actions/checkout@v3
+
+      # 2. Configurar Node.js
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: "npm"
+
+      # 3. Instalar dependencias
+      - run: npm ci
+
+      # 4. Construir el proyecto
+      - run: npm run build
+
+      # 5. Desactivar Jekyll
+      - run: touch dist/.nojekyll
+
+      # 6. Publicar en rama gh-pages
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
