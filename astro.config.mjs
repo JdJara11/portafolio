@@ -9,5 +9,5 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   site: 'https://jdjara11.github.io',
-  base: '/portafolio/'
+  base: '/portafolio'
 });
